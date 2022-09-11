@@ -1,0 +1,20 @@
+<div class="full-height">
+  <mat-tab-group mat-align-tabs="start">
+    <mat-tab label="To do">
+      <app-to-do-tab *ngIf="notDoneTodos$ | async as todos" [todos]="todos">
+        <p class="default-text">You're up to date, you have no tasks to be done.</p>
+      </app-to-do-tab>
+    </mat-tab>
+    <mat-tab label="Done">
+      <app-to-do-tab *ngIf="doneTodos$ | async as todos" [todos]="todos" [dragDropEnabled]="false">
+        <p class="default-text">No tasks done.</p>
+      </app-to-do-tab>
+    </mat-tab>
+    <mat-tab label="Archived">
+      <app-to-do-tab *ngIf="archivedTodos$ | async as todos" [todos]="todos" [dragDropEnabled]="false">
+        <p class="default-text">No tasks archived.</p>
+      </app-to-do-tab>
+    </mat-tab>
+  </mat-tab-group>
+  <app-add-todo-button></app-add-todo-button>
+</div>
