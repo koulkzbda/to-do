@@ -1,5 +1,6 @@
 <ng-container *ngIf="todos.length; else noContent">
-  <mat-accordion cdkDropList [cdkDropListData]="todos" (cdkDropListDropped)="drop($event)" multi>
+  <mat-accordion data-testid="mat-accordion" cdkDropList [cdkDropListData]="todos" (cdkDropListDropped)="drop($event)"
+    multi>
     <app-to-do-item *ngFor="let todo of todos" cdkDrag [todo]="todo" [cdkDragDisabled]="!dragDropEnabled">
     </app-to-do-item>
   </mat-accordion>

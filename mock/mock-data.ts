@@ -22,8 +22,8 @@ export const TODOS: any = [
   },
   {
     id: '3',
-    title: 'Review reliability of schedules and forecasts',
-    content: '',
+    title: 'Review RSF',
+    content: 'Investigate reliability of schedules and forecasts KPI',
     done: false,
     priority: 2,
     createdAt: new Date(2022, 9, 10),
