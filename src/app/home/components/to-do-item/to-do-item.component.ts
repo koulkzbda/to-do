@@ -9,7 +9,7 @@ import { EventData } from 'src/app/shared/models/event-data';
   templateUrl: './to-do-item.component.html',
   styleUrls: ['./to-do-item.component.scss']
 })
-export class ToDoItemComponent implements OnInit {
+export class ToDoItemComponent {
 
   @Input() todo: Todo;
 
@@ -17,9 +17,6 @@ export class ToDoItemComponent implements OnInit {
     private eventBus: EventBusService,
     private router: Router,
   ) { }
-
-  ngOnInit(): void {
-  }
 
   public updateTodoStatus(done: boolean, todo: Todo) {
     this.eventBus.emit(new EventData<{ done: boolean, todo: Todo }>('updateTodoStatus', { done, todo }));

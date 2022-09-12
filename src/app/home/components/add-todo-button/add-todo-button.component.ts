@@ -6,14 +6,11 @@ import { Router } from '@angular/router';
   templateUrl: './add-todo-button.component.html',
   styleUrls: ['./add-todo-button.component.scss']
 })
-export class AddTodoButtonComponent implements OnInit {
+export class AddTodoButtonComponent {
 
   constructor(
     private router: Router,
   ) { }
-
-  ngOnInit(): void {
-  }
 
   public goToAddTodo(): void {
     const state = {

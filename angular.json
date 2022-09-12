@@ -150,9 +150,21 @@
               "devServerTarget": "to-do-elum:serve:production"
             }
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "to-do-elum"
+  "defaultProject": "to-do-elum",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }

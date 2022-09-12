@@ -1,9 +1,16 @@
-# ToDoElum
+# ToDo
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.9.
 
+## Website
+
+[![Build Status](https://travis-ci.com/koulkzbda/to-do.svg?branch=master)](https://travis-ci.com/koulkzbda/to-do)
+
+https://koulkzbda.github.io/to-do/
+
 ## Development server
 
+Run `npm i` to install dependencies.
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Build

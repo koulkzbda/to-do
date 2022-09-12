@@ -8,7 +8,7 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
   templateUrl: './to-do-tab.component.html',
   styleUrls: ['./to-do-tab.component.scss']
 })
-export class ToDoTabComponent implements OnInit {
+export class ToDoTabComponent {
 
   @Input() todos: Todo[] = [];
   @Input() dragDropEnabled = true;
@@ -16,9 +16,6 @@ export class ToDoTabComponent implements OnInit {
   constructor(
     private todoService: TodoService
   ) { }
-
-  ngOnInit(): void {
-  }
 
   public drop(event: CdkDragDrop<Todo[]>) {
     moveItemInArray(this.todos, event.previousIndex, event.currentIndex);
