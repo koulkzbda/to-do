@@ -22,7 +22,8 @@ describe('Home page', () => {
   })
 
   it('should go to add to do page', () => {
-    cy.byTestId('add-todo-button').first().click();
-    cy.contains('task');
+    cy.byTestId('add-todo-button').click();
+
+    cy.url().should('match', /app\/add$/);
   })
 })

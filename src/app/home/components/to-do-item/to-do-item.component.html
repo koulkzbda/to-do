@@ -1,7 +1,8 @@
 <mat-expansion-panel [hideToggle]="!todo.content">
   <mat-expansion-panel-header>
     <mat-panel-title>
-      <mat-checkbox appStopClick [checked]="todo.done" (change)="updateTodoStatus($event.checked, todo)">
+      <mat-checkbox appStopClick [checked]="todo.done" [disabled]="todo.hidden"
+        (change)="updateTodoStatus($event.checked, todo)">
         {{ todo.title }}
       </mat-checkbox>
     </mat-panel-title>
@@ -11,11 +12,11 @@
       </button>
     </mat-panel-description>
   </mat-expansion-panel-header>
-  <p>{{ todo.content }}</p>
+  <p data-testid="content">{{ todo.content }}</p>
 </mat-expansion-panel>
 
 <mat-menu #menu="matMenu" appStopClick>
-  <button mat-menu-item (click)="goToUpdate(todo)">
+  <button mat-menu-item (click)="goToUpdate(todo)" [disabled]="todo.hidden">
     Edit
   </button>
   <button mat-menu-item (click)="archive(todo)" *ngIf="!todo.hidden">

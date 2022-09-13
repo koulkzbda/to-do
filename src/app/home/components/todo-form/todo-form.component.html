@@ -4,18 +4,19 @@
     <mat-card-subtitle>{{ cardSubTitle }}</mat-card-subtitle>
     <mat-card-content [formGroup]="form">
       <mat-form-field>
-        <input matInput placeholder="Title" formControlName="title">
-        <mat-error *ngIf="title.errors?.['required']">Please provide a title</mat-error>
+        <input data-testid="title" matInput placeholder="Title" formControlName="title">
+        <mat-error *ngIf="title.errors?.['required']" data-testid="error-title-required">Please provide a title
+        </mat-error>
       </mat-form-field>
 
 
       <mat-form-field>
-        <textarea matInput placeholder="Description" formControlName="content"></textarea>
+        <textarea data-testid="content" matInput placeholder="Description" formControlName="content"></textarea>
       </mat-form-field>
     </mat-card-content>
     <mat-card-actions align="end">
-      <button mat-button (click)="cancel()">CANCEL</button>
-      <button mat-button [disabled]="form.invalid || form.untouched" (click)="save()">SAVE</button>
+      <button mat-button (click)="cancel()" data-testid="cancel">CANCEL</button>
+      <button mat-button [disabled]="form.invalid || form.untouched" (click)="save()" data-testid="save">SAVE</button>
     </mat-card-actions>
   </mat-card>
 </div>

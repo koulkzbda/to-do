@@ -72,7 +72,7 @@ export class HomeComponent implements OnInit {
 
       this.dialogService.confirmed().subscribe(confirmed => {
         if (confirmed) {
-          this.todoService.updateHiddenTodo(todo, false).subscribe();
+          this.todoService.deleteTodo(todo).subscribe();
         }
       });
     }
